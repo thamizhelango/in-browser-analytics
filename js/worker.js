@@ -2,7 +2,7 @@
 // This worker runs DuckDB in a separate thread to keep the UI responsive
 
 // Import DuckDB-WASM
-importScripts('https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb-browser-eh.worker.min.js');
+importScripts('https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb.js');
 
 let db;
 let conn;
@@ -13,12 +13,12 @@ async function initDuckDB() {
     // Select the bundle based on browser support
     const JSDELIVR_BUNDLES = {
       mvp: {
-        mainModule: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.24.0/dist/duckdb-mvp.wasm',
-        mainWorker: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.24.0/dist/duckdb-browser-mvp.worker.js',
+        mainModule: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb-mvp.wasm',
+        mainWorker: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb-browser-mvp.worker.min.js',
       },
       eh: {
-        mainModule: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.24.0/dist/duckdb-eh.wasm',
-        mainWorker: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.24.0/dist/duckdb-browser-eh.worker.js',
+        mainModule: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb-eh.wasm',
+        mainWorker: 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb-browser-eh.worker.min.js',
       }
     };
     
