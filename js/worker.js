@@ -2,7 +2,7 @@
 // This worker runs DuckDB in a separate thread to keep the UI responsive
 
 // Import DuckDB-WASM
-importScripts('https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.24.0/dist/duckdb.js');
+importScripts('https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/dist/duckdb-browser-eh.worker.min.js');
 
 let db;
 let conn;
