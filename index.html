@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In-Browser Analytics Using WebAssembly: Live Demo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.1-dev132.0/+esm"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🚀 In-Browser Analytics</div>
+      <h1>WebAssembly in Action: Live Data Processing</h1>
+    </div>
+    
+    <div class="status" id="status">Initializing DuckDB-WASM...</div>
+    
+    <div class="controls">
+      <div class="data-size-inputs">
+        <label for="rowCount">Number of Rows:</label>
+        <input type="number" id="rowCount" value="100000" min="1000" max="1000000">
+      </div>
+      <button id="generateData" disabled>Generate Test Data</button>
+      <button id="loadData" disabled>Load Data with Progress Bar</button>
+      <button id="showResults" disabled>Show Results</button>
+    </div>
+    
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar" style="width: 0%">0%</div>
+    </div>
+    
+    <div class="log-container" id="logContainer">
+      <div class="log-entry log-info">Waiting to start...</div>
+    </div>
+    
+    <div class="chart-container">
+      <canvas id="resultsChart"></canvas>
+    </div>
+    
+    <h3>Query Results</h3>
+    <div id="resultsTable"></div>
+  </div>
+  
+  <footer>
+    <p>In-Browser Analytics Demo - Powered by DuckDB-WASM and WebAssembly</p>
+    <p><a href="https://github.com/yourusername/in-browser-analytics" target="_blank">View on GitHub</a></p>
+  </footer>
+  
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
